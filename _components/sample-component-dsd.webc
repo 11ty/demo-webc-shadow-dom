@@ -1,0 +1,26 @@
+<!--- Method 2: Declarative Shadow DOM --->
+<template shadowrootmode="open">
+	Server rendered Declarative Shadow DOM: <button>1</button>
+	<style>
+	:host {
+		color: red;
+	}
+	</style>
+</template>
+
+<script src="shadow-dom-polyfill.js"></script>
+
+<script>
+if("customElements" in window) {
+	window.customElements.define("sample-component-dsd", class extends HTMLElement {
+		connectedCallback() {
+			// Declarative Shadow DOM
+			polyfillDeclarativeShadowDom(this);
+
+			this.shadowRoot.querySelector("button").addEventListener("click", function() {
+				this.innerText = parseInt(this.innerText) + 1;
+			});
+		}
+	});
+}
+</script>

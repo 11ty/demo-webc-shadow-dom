@@ -1,0 +1,31 @@
+<!--- Method 3: Shadow DOM --->
+<script webc:type="js" webc:nokeep>
+webc.helpers.html(`<template id="shadow-dom-template">
+	Client-rendered Shadow DOM: <button>1</button>
+
+	<style>
+	:host {
+		color: green;
+	}
+	</style>
+</template>`, "shadowdom", $data.page.url);
+</script>
+
+<script src="shadow-dom-polyfill.js"></script>
+
+<script>
+class SampleComponentSD extends HTMLElement {
+	connectedCallback() {
+		let template = document.getElementById("shadow-dom-template");
+		attachShadowDom(this, template, "open");
+
+		this.shadowRoot.querySelector("button").addEventListener("click", function() {
+			this.innerText = parseInt(this.innerText) + 1;
+		});
+	}
+}
+
+if("customElements" in window) {
+	window.customElements.define("sample-component-sd", SampleComponentSD);
+}
+</script>

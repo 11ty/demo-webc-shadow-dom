@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Rendering modes of WebC components: Shadow DOM versus HTML</title>
+		<style webc:keep @raw="getBundle('css')"></style>
+		<style>
+		html {
+			font-family: system-ui, sans-serif;
+		}
+		</style>
+	</head>
+	<body>
+		<h2>Rendering modes of WebC components</h2>
+
+		<h3>Plain HTML</h3>
+		<p>
+			<sample-component-html></sample-component-html>
+		</p>
+
+		<h3>Shadow DOM</h3>
+		<p>
+			<sample-component-dsd></sample-component-dsd>
+		</p>
+		<p>
+			<sample-component-sd></sample-component-sd>
+		</p>
+
+		<script type="module" webc:keep @raw="getBundle('js')"></script>
+		<div @raw="getBundle('html', 'shadowdom')"></script>
+	</body>
+</html>

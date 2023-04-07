@@ -1,0 +1,20 @@
+<!--- Method 1: Plain ol HTML --->
+Server rendered HTML: <button>1</button>
+
+<style webc:scoped>
+:host {
+	color: blue;
+}
+</style>
+
+<script>
+if("customElements" in window) {
+	window.customElements.define("sample-component-html", class extends HTMLElement {
+		connectedCallback() {
+			this.querySelector("button").addEventListener("click", function() {
+				this.innerText = parseInt(this.innerText) + 1;
+			});
+		}
+	});
+}
+</script>
