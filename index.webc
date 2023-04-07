@@ -12,20 +12,29 @@
 		</style>
 	</head>
 	<body>
-		<h2>Rendering modes of WebC components</h2>
+		<header>
+			<h1>Rendering modes of WebC components</h1>
+		</header>
 
-		<h3>Plain HTML</h3>
-		<p>
-			<sample-component-html></sample-component-html>
-		</p>
+		<main>
+			<h2>Plain HTML</h2>
+			<p>
+				<sample-component-html></sample-component-html>
+			</p>
 
-		<h3>Shadow DOM</h3>
-		<p>
-			<sample-component-dsd></sample-component-dsd>
-		</p>
-		<p>
-			<sample-component-sd></sample-component-sd>
-		</p>
+			<h2>Shadow DOM</h2>
+			<p>
+				<sample-component-dsd></sample-component-dsd>
+			</p>
+			<p>
+				<sample-component-sd></sample-component-sd>
+			</p>
+		</main>
+
+		<footer>
+			<h2>GitHub</h2>
+			<p>Return to the <a href="https://github.com/11ty/demo-webc-shadow-dom">GitHub repository</a>.</p>
+		</footer>
 
 		<script type="module" webc:keep @raw="getBundle('js')"></script>
 		<div @raw="getBundle('html', 'shadowdom')"></script>
