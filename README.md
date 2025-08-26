@@ -2,4 +2,5 @@
 
 Demo showing Shadow DOM versus plain HTML components written in WebC.
 
-Companion to the blog post at https://www.zachleat.com/web/styling-web-components/
+* [Demo on Netlify](https://demo-webc-shadow-dom.netlify.app/)
+* Blog post: [3 Methods for Scoped Styles in Web Components that Work Everywhere](https://www.zachleat.com/web/styling-web-components/)
