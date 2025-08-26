@@ -1,14 +1,16 @@
 <!--- Method 3: Shadow DOM --->
 <script webc:type="js" webc:nokeep>
-webc.helpers.html(`<template id="shadow-dom-template">
-	Client-rendered Shadow DOM: <button>1</button>
-
-	<style>
-	:host {
-		color: green;
-	}
-	</style>
-</template>`, "shadowdom", $data.page.url);
+export default function({ webc, $data }) {
+	return webc.helpers.html(`<template id="shadow-dom-template">
+		Client-rendered Shadow DOM: <button>1</button>
+	
+		<style>
+		:host {
+			color: green;
+		}
+		</style>
+	</template>`, "shadowdom", $data.page.url);
+}
 </script>
 
 <script src="shadow-dom-polyfill.js"></script>
