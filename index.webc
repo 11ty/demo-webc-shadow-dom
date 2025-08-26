@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Rendering modes of WebC components: Shadow DOM versus HTML</title>
+		<meta name="generator" :content="eleventy.generator">
 		<style webc:keep @raw="getBundle('css')"></style>
 		<style>
 		html {
